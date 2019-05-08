@@ -231,17 +231,24 @@
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
+    <Compile Include="Business\SiteDependencyResolver\ServiceLocatorDependencyResolver.cs" />
     <Compile Include="Business\Initialization\AdminAccountInitializationModule.cs" />
+    <Compile Include="Business\Initialization\ExtendedTinyMceInitialization.cs" />
+    <Compile Include="Business\Initialization\RegisterDependencyResolverInitializationModule.cs" />
+    <Compile Include="Controllers\BioPageController.cs" />
+    <Compile Include="Controllers\EditorialBlockController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Blocks\EditorialBlock.cs" />
+    <Compile Include="Models\Media\AnyFile.cs" />
+    <Compile Include="Models\Media\ImageFile.cs" />
+    <Compile Include="Models\Pages\BioPage.cs" />
     <Compile Include="Models\Pages\StartPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Blocks\" />
-    <Folder Include="Models\Media\" />
     <Folder Include="Models\Properties\" />
     <Folder Include="Static\" />
   </ItemGroup>
@@ -323,6 +330,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\StartPage\Index.cshtml" />
+    <Content Include="Views\BioPage\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\StringsList.cshtml" />
+    <Content Include="Views\EditorialBlock\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
