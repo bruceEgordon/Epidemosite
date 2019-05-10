@@ -21,8 +21,10 @@ namespace Epidemosite.Controllers
         }
         public override ActionResult Index(EditorialBlock currentBlock)
         {
-            var hostingPage = _pageRouteHelper.Page;
-            ViewBag.pageName = hostingPage.Name;
+            //Using ViewBag for convenience, a better approach would
+            //be to create and use a view model.
+            ViewBag.pageName = _pageRouteHelper.Page.Name;
+
             return PartialView(currentBlock);
         }
     }
