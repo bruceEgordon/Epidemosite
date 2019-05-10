@@ -10,8 +10,8 @@ namespace Epidemosite.Business.SiteDependencyResolver
 {
     public class ServiceLocatorDependencyResolver : IDependencyResolver
     {
-        private readonly IContainer _container;
-        public ServiceLocatorDependencyResolver(IContainer container)
+        private readonly IServiceLocator _container;
+        public ServiceLocatorDependencyResolver(IServiceLocator container)
         {
             _container = container;
         }
@@ -20,9 +20,9 @@ namespace Epidemosite.Business.SiteDependencyResolver
 
             if(serviceType.IsInterface || serviceType.IsAbstract)
             {
-                //object instance;
-                //return _container.TryGetExistingInstance(serviceType, out instance) ? instance : null;
-                return _container.TryGetInstance(serviceType);
+                object instance;
+                return _container.TryGetExistingInstance(serviceType, out instance) ? instance : null;
+                //return _container.TryGetInstance(serviceType);
             }
             return GetConcreteService(serviceType);
         }

@@ -9,17 +9,16 @@ using EPiServer.ServiceLocation;
 namespace Epidemosite.Business.Initialization
 {
     [InitializableModule]
-    [ModuleDependency(typeof(EPiServer.Web.InitializationModule))]
     public class RegisterDependencyResolverInitializationModule : IConfigurableModule
     {
         public void ConfigureContainer(ServiceConfigurationContext context)
         {
-            DependencyResolver.SetResolver(new ServiceLocatorDependencyResolver(context.StructureMap()));
+            //DependencyResolver.SetResolver(new ServiceLocatorDependencyResolver(context.StructureMap()));
         }
 
         public void Initialize(InitializationEngine context)
         {
-            //DependencyResolver.SetResolver(new ServiceLocatorDependencyResolver(context.Locate.Advanced));
+            DependencyResolver.SetResolver(new ServiceLocatorDependencyResolver(context.Locate.Advanced));
         }
 
         public void Uninitialize(InitializationEngine context)
