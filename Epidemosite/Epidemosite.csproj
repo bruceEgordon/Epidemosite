@@ -337,6 +337,7 @@
     <Content Include="App_Data\GeoLite2-City.mmdb" />
     <Content Include="App_Data\GeoLite2-City-Locations-en.csv" />
     <Content Include="Assets\Documents\Translations.pdf" />
+    <Content Include="Assets\CMS-Bootcamp-for-devs-exercise-manual.docx" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
